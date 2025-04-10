@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Implicit Intent -->
+        <EditText
+            android:id="@+id/urlEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter a URL"
+            android:inputType="textUri" />
+
+        <Button
+            android:id="@+id/visitUrlButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/urlEditText"
+            android:layout_marginTop="16dp"
+            android:text="Visit URL" />
+
+        <!-- Explicit Intent -->
+        <TextView
+            android:id="@+id/goToSecondActivityTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/visitUrlButton"
+            android:layout_marginTop="16dp"
+            android:text="Go to Second Activity" />
+
+        <Button
+            android:id="@+id/goToSecondActivityButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/goToSecondActivityTextView"
+            android:layout_marginTop="8dp"
+            android:text="Go" />
+
+        <!-- Context Menu -->
+        <TextView
+            android:id="@+id/contextMenuTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/goToSecondActivityButton"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="32dp"
+            android:text="Long-press me for a context menu"
+            android:textSize="18sp" />
+
+        <!-- Popup Menu -->
+        <Button
+            android:id="@+id/popupMenuButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/contextMenuTextView"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:text="Show Popup Menu" />
+
+        <!-- Progress Bar -->
+        <TextView
+            android:id="@+id/progressBarTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/popupMenuButton"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="32dp"
+            android:text="Progress Bar:"
+            android:textSize="18sp" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/progressBarTextView"
+            android:layout_marginTop="8dp"
+            android:max="100" />
+
+        <Button
+            android:id="@+id/showProgressBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/progressBar"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="8dp"
+            android:text="Show Progress" />
+
+        <!-- Date Picker -->
+        <TextView
+            android:id="@+id/datePickerTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/showProgressBtn"
+            android:layout_marginTop="32dp"
+            android:text="Date Picker:"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/textShown"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/datePickerTextView"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="8dp"
+            android:text="Selected Date: None" />
+
+        <CalendarView
+            android:id="@+id/calenview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textShown"
+            android:layout_marginTop="8dp" />
+
+        <!-- Alert Dialog -->
+        <Button
+            android:id="@+id/btnShowDialog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/calenview"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="32dp"
+            android:text="Show Alert Dialog" />
+
+        <!-- SharedPreferences Section -->
+        <TextView
+            android:id="@+id/sharedPrefsTitleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btnShowDialog"
+            android:layout_marginTop="32dp"
+            android:text="SharedPreferences:"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/editTextName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/sharedPrefsTitleTextView"
+            android:layout_marginTop="8dp"
+            android:hint="Enter your name"
+            android:inputType="textPersonName" />
+
+        <Button
+            android:id="@+id/btnSavePrefs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editTextName"
+            android:layout_marginTop="8dp"
+            android:text="Save Name" />
+
+        <TextView
+            android:id="@+id/textViewSavedName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btnSavePrefs"
+            android:layout_marginTop="8dp"
+            android:text="Saved Name: None"
+            android:textSize="16sp" />
+
+        <!-- SharedPreferences Example 2 Section -->
+        <TextView
+            android:id="@+id/sharedPrefsExample2TitleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textViewSavedName"
+            android:layout_marginTop="32dp"
+            android:text="SharedPreferences Example 2:"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/editId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/sharedPrefsExample2TitleTextView"
+            android:layout_marginTop="8dp"
+            android:hint="Enter ID"
+            android:inputType="number" />
+
+        <EditText
+            android:id="@+id/editName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editId"
+            android:layout_marginTop="8dp"
+            android:hint="Enter Name"
+            android:inputType="textPersonName" />
+
+        <LinearLayout
+            android:id="@+id/buttonLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editName"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/save"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Save" />
+
+            <Button
+                android:id="@+id/view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="View" />
+
+            <Button
+                android:id="@+id/clear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Clear" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textViewShowId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/buttonLayout"
+            android:layout_marginTop="16dp"
+            android:text="Your ID: "
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/textViewShowName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textViewShowId"
+            android:layout_marginTop="8dp"
+            android:text="Your Name: "
+            android:textSize="16sp" />
+
+        <!-- Location Section -->
+        <TextView
+            android:id="@+id/locationSectionTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textViewShowName"
+            android:layout_marginTop="32dp"
+            android:text="Location Services:"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/locationSectionTitle"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:text="Thiagarajar College of Engineering"
+            android:textColor="#009688"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/show_my_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/title"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="32dp"
+            android:text="Show My Location" />
+
+        <!-- Geocoding Section -->
+        <TextView
+            android:id="@+id/geocodingSectionTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/show_my_location"
+            android:layout_marginTop="32dp"
+            android:text="Reverse Geocoding:"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/addressTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/geocodingSectionTitle"
+            android:layout_marginTop="16dp"
+            android:padding="16dp"
+            android:text="Fetching address..."
+            android:textSize="16sp" />
+
+        <!-- SMS Section -->
+        <TextView
+            android:id="@+id/smsSectionTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/addressTextView"
+            android:layout_marginTop="32dp"
+            android:text="Send SMS:"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/phoneNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/smsSectionTitle"
+            android:layout_marginTop="16dp"
+            android:hint="Enter Phone Number"
+            android:inputType="phone"
+            android:padding="10dp"/>
+
+        <EditText
+            android:id="@+id/message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/phoneNumber"
+            android:layout_marginTop="8dp"
+            android:hint="Enter Message"
+            android:inputType="textMultiLine"
+            android:padding="10dp"/>
+
+        <Button
+            android:id="@+id/sendSmsButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/message"
+            android:layout_marginTop="10dp"
+            android:layout_centerHorizontal="true"
+            android:text="Send SMS"
+            android:padding="10dp"/>
+
+        <TextView
+            android:id="@+id/statusText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/sendSmsButton"
+            android:layout_marginTop="8dp"
+            android:layout_centerHorizontal="true"
+            android:text="SMS Status"
+            android:textSize="16sp"
+            android:padding="10dp"/>
+
+        <!-- Notification Section -->
+        <TextView
+            android:id="@+id/notificationSectionTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/statusText"
+            android:layout_marginTop="32dp"
+            android:text="Notifications:"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnNotify"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/notificationSectionTitle"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:text="Show Notification" />
+
+        <Button
+            android:id="@+id/goDatabaseButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btnNotify"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:text="Go to Database" />
+    </RelativeLayout>
+</ScrollView>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/action_call"
+        android:title="Call" />
+    <item
+        android:id="@+id/action_web"
+        android:title="Web" />
+    <item
+        android:id="@+id/action_join"
+        android:title="Join" />
+</menu>
