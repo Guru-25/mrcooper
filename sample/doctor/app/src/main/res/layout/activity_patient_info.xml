@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center"
+    android:background="@android:color/white">
+
+    <EditText
+        android:id="@+id/etPatientName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Patient Name"
+        android:padding="10dp"
+        android:background="@android:drawable/editbox_background"
+        android:textSize="16sp" />
+
+    <EditText
+        android:id="@+id/etAllergies"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Allergies"
+        android:padding="10dp"
+        android:background="@android:drawable/editbox_background"
+        android:textSize="16sp"
+        android:layout_marginTop="10dp" />
+
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Save Info"
+        android:backgroundTint="@android:color/holo_blue_light"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="15dp" />
+
+    <TextView
+        android:id="@+id/tvSavedData"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Saved Data Will Appear Here"
+        android:textSize="16sp"
+        android:textColor="@android:color/black"
+        android:layout_marginTop="20dp"
+        android:padding="10dp"
+        android:background="@android:color/darker_gray" />
+
+</LinearLayout>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Book an Appointment"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:paddingBottom="16dp"/>
+
+    <Spinner
+        android:id="@+id/spinnerDoctors"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:spinnerMode="dropdown"
+        android:background="@android:drawable/btn_dropdown"
+        android:padding="8dp"/>
+
+    <Button
+        android:id="@+id/btnSelectDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Select Date"
+        android:layout_marginTop="10dp"/>
+
+    <TextView
+        android:id="@+id/txtSelectedDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Selected Date: "
+        android:padding="8dp"
+        android:textSize="16sp"/>
+
+    <Button
+        android:id="@+id/btnSelectTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Select Time"
+        android:layout_marginTop="10dp"/>
+
+    <TextView
+        android:id="@+id/txtSelectedTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Selected Time: "
+        android:padding="8dp"
+        android:textSize="16sp"/>
+
+    <Button
+        android:id="@+id/btnConfirmBooking"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Confirm Booking"
+        android:layout_marginTop="20dp"
+        android:background="@android:color/holo_green_dark"
+        android:textColor="@android:color/white"/>
+</LinearLayout>

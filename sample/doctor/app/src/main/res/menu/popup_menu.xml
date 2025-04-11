@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/book_appointment"
+        android:title="Book Appointment" />
+    <item
+        android:id="@+id/view_past_records"
+        android:title="View Past Records" />
+    <item
+        android:id="@+id/view_doctor_profiles"
+        android:title="View Doctor Profiles" />
+</menu>

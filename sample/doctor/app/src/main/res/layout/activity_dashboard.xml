@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center"
+    android:background="@color/light_background">
+
+    <!-- Stylish Popup Menu Button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Menu"
+        android:textSize="18sp"
+        android:paddingVertical="12dp"
+        android:backgroundTint="@color/white"
+        android:textColor="@color/primaryColor"
+        app:cornerRadius="30dp"
+        app:elevation="8dp"
+        android:layout_marginBottom="20dp" />
+
+    <!-- Patient Info Button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnOpenPatientInfo"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="Patient Info"
+        android:textSize="16sp"
+        android:backgroundTint="@color/primaryColor"
+        android:textColor="@color/white"
+        app:cornerRadius="50dp"
+        app:elevation="8dp"
+        android:layout_marginBottom="10dp" />
+
+    <!-- Doctor Location Button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnOpenMap"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="See Doctor Location"
+        android:textSize="16sp"
+        android:backgroundTint="@color/secondaryColor"
+        android:textColor="@color/white"
+        app:cornerRadius="50dp"
+        app:elevation="8dp"
+        android:layout_marginBottom="10dp" />
+
+    <!-- Appoint Doctor Button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnAppointDoctor"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="Appoint Doctor"
+        android:textSize="16sp"
+        android:backgroundTint="@color/primaryColor"
+        android:textColor="@color/white"
+        app:cornerRadius="50dp"
+        app:elevation="8dp"
+        android:layout_marginBottom="10dp" />
+
+    <!-- New Health Tips Button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnHealthTips"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="Health Tips Videos"
+        android:textSize="16sp"
+        android:backgroundTint="@color/secondaryColor"
+        android:textColor="@color/white"
+        app:cornerRadius="50dp"
+        app:elevation="8dp"
+        android:layout_marginBottom="10dp" />
+
+</LinearLayout>
