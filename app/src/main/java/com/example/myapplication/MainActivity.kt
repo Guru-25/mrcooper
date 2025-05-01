@@ -397,7 +397,7 @@ class MainActivity : AppCompatActivity() {
             updateWifiStatus()
         }
 
-        // bluettoth
+        // bluetooth
         val bluetoothStatusText = findViewById<TextView>(R.id.bluetoothStatusText)
         val toggleBluetoothButton = findViewById<Button>(R.id.toggleBluetoothButton)
 
@@ -438,6 +438,13 @@ class MainActivity : AppCompatActivity() {
             } else {
                 requestCameraPermission()
             }
+        }
+
+        // graphics and animation
+        val toActivity3Button = findViewById<Button>(R.id.toActivity3Button)
+        toActivity3Button.setOnClickListener {
+            val intent = Intent(this, MainActivity3::class.java)
+            startActivity(intent)
         }
     }
 

@@ -445,5 +445,14 @@
             android:text="Open Camera"
             android:layout_below="@+id/imageView"
             android:padding="10dp"/>
+
+<!--        animation and graphics-->
+        <Button
+            android:id="@+id/toActivity3Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Go to Activity 3"
+            android:layout_below="@+id/openCameraButton"
+            android:layout_marginTop="20dp" />
     </RelativeLayout>
 </ScrollView>
