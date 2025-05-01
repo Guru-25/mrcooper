@@ -374,5 +374,17 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="16dp"
             android:text="Go to Database" />
+
+        <TextView
+            android:id="@+id/statusTextBroadcast"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/goDatabaseButton"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:padding="10dp"
+            android:text="Listening for Airplane Mode..."
+            android:textSize="18sp"
+            android:textStyle="bold" />
     </RelativeLayout>
 </ScrollView>

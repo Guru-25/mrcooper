@@ -25,6 +25,8 @@ class MainActivity : AppCompatActivity() {
                 R.id.radioBangalore -> "Bangalore"
                 R.id.radioHyderabad -> "Hyderabad"
                 else -> ""
+                R.id.radioHyderabad -> "Hyderabad"
+                else
             }
 
             if (location.isNotEmpty()) {

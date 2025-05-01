@@ -50,6 +50,10 @@ import android.app.PendingIntent
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 
+// broadcast
+import android.content.BroadcastReceiver
+import android.content.IntentFilter
+
 class MainActivity : AppCompatActivity() {
     // menu
     private lateinit var contextMenuTextView: TextView
@@ -93,6 +97,21 @@ class MainActivity : AppCompatActivity() {
     // Notification constants
     private val CHANNEL_ID = "notification_channel"
     private val NOTIFICATION_ID = 1
+
+    // broadcast
+    private lateinit var statusTextBroadcast: TextView
+
+    private val airplaneModeReceiver = object : BroadcastReceiver() {
+        override fun onReceive(context: Context, intent: Intent) {
+            if (intent.action == Intent.ACTION_AIRPLANE_MODE_CHANGED) {
+                val isAirplaneModeOn = intent.getBooleanExtra("state", false)
+                runOnUiThread {
+                    // Use the same statusText TextView already defined/initialized in onCreate.
+                    statusTextBroadcast.text = if (isAirplaneModeOn) "Airplane Mode: ON" else "Airplane Mode: OFF"
+                }
+            }
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -335,6 +354,9 @@ class MainActivity : AppCompatActivity() {
         notifyButton.setOnClickListener {
             showNotification()
         }
+
+        // broadcast
+        statusTextBroadcast = findViewById(R.id.statusTextBroadcast)
     }
 
     // menu
@@ -749,5 +771,21 @@ class MainActivity : AppCompatActivity() {
         private const val REQUEST_CHECK_SETTINGS = 123
         private const val LOCATION_PERMISSION_REQUEST_CODE = 909
         private const val NOTIFICATION_PERMISSION_CODE = 103
+    }
+
+    // broadcast
+    override fun onResume() {
+        super.onResume()
+        val filter = IntentFilter(Intent.ACTION_AIRPLANE_MODE_CHANGED)
+        registerReceiver(airplaneModeReceiver, filter)
+    }
+
+    override fun onPause() {
+        super.onPause()
+        try {
+            unregisterReceiver(airplaneModeReceiver)
+        } catch (e: IllegalArgumentException) {
+            e.printStackTrace() // Handle the case where the receiver was not registered
+        }
     }
 }
