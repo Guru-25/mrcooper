@@ -386,5 +386,28 @@
             android:text="Listening for Airplane Mode..."
             android:textSize="18sp"
             android:textStyle="bold" />
+
+<!--        wifi-->
+        <!-- Wi‑Fi Status TextView -->
+        <TextView
+            android:id="@+id/wifiStatusText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/statusTextBroadcast"
+            android:text="Wi-Fi Status"
+            android:textSize="20sp"
+            android:padding="20dp"
+            android:layout_centerHorizontal="true"/>
+
+        <!-- Wi‑Fi Toggle Button -->
+        <Button
+            android:id="@+id/toggleWifiButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Click to know the Wifi Status"
+            android:layout_below="@id/wifiStatusText"
+            android:layout_centerHorizontal="true"
+            android:padding="10dp"
+            android:layout_marginTop="8dp"/>
     </RelativeLayout>
 </ScrollView>

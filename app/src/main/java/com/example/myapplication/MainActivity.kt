@@ -54,6 +54,9 @@ import androidx.core.app.NotificationManagerCompat
 import android.content.BroadcastReceiver
 import android.content.IntentFilter
 
+// wifi
+import android.net.wifi.WifiManager
+
 class MainActivity : AppCompatActivity() {
     // menu
     private lateinit var contextMenuTextView: TextView
@@ -100,6 +103,11 @@ class MainActivity : AppCompatActivity() {
 
     // broadcast
     private lateinit var statusTextBroadcast: TextView
+
+    // wifi
+    private lateinit var wifiManager: WifiManager
+    private lateinit var wifiStatusText: TextView
+    private lateinit var toggleWifiButton: Button
 
     private val airplaneModeReceiver = object : BroadcastReceiver() {
         override fun onReceive(context: Context, intent: Intent) {
@@ -357,6 +365,23 @@ class MainActivity : AppCompatActivity() {
 
         // broadcast
         statusTextBroadcast = findViewById(R.id.statusTextBroadcast)
+
+        // wifi
+        // Initialize Wi‑Fi views
+        wifiStatusText = findViewById(R.id.wifiStatusText)
+        toggleWifiButton = findViewById(R.id.toggleWifiButton)
+
+        // Initialize WifiManager
+        wifiManager = applicationContext.getSystemService(Context.WIFI_SERVICE) as WifiManager
+
+        // Update initial Wi‑Fi status
+        updateWifiStatus()
+
+        // Toggle Wi‑Fi when button is clicked
+        toggleWifiButton.setOnClickListener {
+            wifiManager.isWifiEnabled = !wifiManager.isWifiEnabled
+            updateWifiStatus()
+        }
     }
 
     // menu
@@ -787,5 +812,10 @@ class MainActivity : AppCompatActivity() {
         } catch (e: IllegalArgumentException) {
             e.printStackTrace() // Handle the case where the receiver was not registered
         }
+    }
+
+    // wifi
+    private fun updateWifiStatus() {
+        wifiStatusText.text = if (wifiManager.isWifiEnabled) "Wi‑Fi is ON" else "Wi‑Fi is OFF"
     }
 }
