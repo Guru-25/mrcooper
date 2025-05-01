@@ -47,6 +47,7 @@ import android.Manifest
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.app.PendingIntent
+import android.bluetooth.BluetoothAdapter
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 
@@ -108,6 +109,10 @@ class MainActivity : AppCompatActivity() {
     private lateinit var wifiManager: WifiManager
     private lateinit var wifiStatusText: TextView
     private lateinit var toggleWifiButton: Button
+
+    // bluetooth
+    private val bluetoothAdapter: BluetoothAdapter? = BluetoothAdapter.getDefaultAdapter()
+
 
     private val airplaneModeReceiver = object : BroadcastReceiver() {
         override fun onReceive(context: Context, intent: Intent) {
@@ -381,6 +386,37 @@ class MainActivity : AppCompatActivity() {
         toggleWifiButton.setOnClickListener {
             wifiManager.isWifiEnabled = !wifiManager.isWifiEnabled
             updateWifiStatus()
+        }
+
+        // bluettoth
+        val bluetoothStatusText = findViewById<TextView>(R.id.bluetoothStatusText)
+        val toggleBluetoothButton = findViewById<Button>(R.id.toggleBluetoothButton)
+
+        // Function to update Bluetooth status
+        fun updateBluetoothStatus() {
+            bluetoothStatusText.text = when {
+                bluetoothAdapter == null -> "Bluetooth not supported"
+                bluetoothAdapter.isEnabled -> "Bluetooth is ON"
+                else -> "Bluetooth is OFF"
+            }
+        }
+
+        // Set initial Bluetooth status
+        updateBluetoothStatus()
+
+        // Toggle Bluetooth when button is clicked
+        toggleBluetoothButton.setOnClickListener {
+            if (bluetoothAdapter != null) {
+                if (bluetoothAdapter.isEnabled) {
+                    bluetoothAdapter.disable()
+                } else {
+                    // Request user to enable Bluetooth
+                    val enableBtIntent = Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE)
+                    startActivity(enableBtIntent)
+                }
+            }
+            // Update the status after attempting to toggle
+            updateBluetoothStatus()
         }
     }
 

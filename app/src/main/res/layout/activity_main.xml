@@ -409,5 +409,23 @@
             android:layout_centerHorizontal="true"
             android:padding="10dp"
             android:layout_marginTop="8dp"/>
+
+<!--        bluetooth-->
+        <TextView
+            android:id="@+id/bluetoothStatusText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bluetooth Status"
+            android:textSize="20sp"
+            android:layout_below="@id/toggleWifiButton"
+            android:padding="20dp" />
+
+        <Button
+            android:id="@+id/toggleBluetoothButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Toggle Bluetooth"
+            android:layout_below="@id/bluetoothStatusText"
+            android:padding="10dp" />
     </RelativeLayout>
 </ScrollView>
