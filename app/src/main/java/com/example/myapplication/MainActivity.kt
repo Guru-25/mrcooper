@@ -58,6 +58,15 @@ import android.content.IntentFilter
 // wifi
 import android.net.wifi.WifiManager
 
+// camera
+import android.app.Activity
+import android.graphics.Bitmap
+import android.provider.MediaStore
+import android.widget.ImageView
+private lateinit var imageView: ImageView
+private val CAMERA_REQUEST_CODE = 100
+private val CAMERA_PERMISSION_CODE = 101
+
 class MainActivity : AppCompatActivity() {
     // menu
     private lateinit var contextMenuTextView: TextView
@@ -418,6 +427,18 @@ class MainActivity : AppCompatActivity() {
             // Update the status after attempting to toggle
             updateBluetoothStatus()
         }
+
+        // camera
+        imageView = findViewById(R.id.imageView)
+        val openCameraButton = findViewById<Button>(R.id.openCameraButton)
+
+        openCameraButton.setOnClickListener {
+            if (checkCameraPermission()) {
+                openCamera()
+            } else {
+                requestCameraPermission()
+            }
+        }
     }
 
     // menu
@@ -674,6 +695,25 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    // camera
+    private fun checkCameraPermission(): Boolean {
+        return ContextCompat.checkSelfPermission(
+            this, Manifest.permission.CAMERA
+        ) == PackageManager.PERMISSION_GRANTED
+    }
+
+    private fun requestCameraPermission() {
+        ActivityCompat.requestPermissions(
+            this, arrayOf(Manifest.permission.CAMERA),
+            CAMERA_PERMISSION_CODE
+        )
+    }
+
+    private fun openCamera() {
+        val cameraIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+        startActivityForResult(cameraIntent, CAMERA_REQUEST_CODE)
+    }
+
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == Companion.REQUEST_CHECK_SETTINGS) {
@@ -687,6 +727,11 @@ class MainActivity : AppCompatActivity() {
                     Toast.LENGTH_SHORT
                 ).show()
             }
+        }
+        // camera
+        if (requestCode == CAMERA_REQUEST_CODE && resultCode == Activity.RESULT_OK) {
+            val photo = data?.extras?.get("data") as Bitmap
+            imageView.setImageBitmap(photo)
         }
     }
 
@@ -824,6 +869,15 @@ class MainActivity : AppCompatActivity() {
                 } else {
                     Toast.makeText(this, "Notification permission denied", Toast.LENGTH_SHORT).show()
                 }
+            }
+        }
+
+        // camera
+        if (requestCode == CAMERA_PERMISSION_CODE) {
+            if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                openCamera()
+            } else {
+                Toast.makeText(this, "Camera permission denied!", Toast.LENGTH_SHORT).show()
             }
         }
     }

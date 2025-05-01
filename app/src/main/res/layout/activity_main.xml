@@ -427,5 +427,23 @@
             android:text="Toggle Bluetooth"
             android:layout_below="@id/bluetoothStatusText"
             android:padding="10dp" />
+
+<!--        camera-->
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="50dp"
+            android:layout_below="@id/toggleBluetoothButton"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/ic_launcher"/>
+
+        <Button
+            android:id="@+id/openCameraButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Open Camera"
+            android:layout_below="@+id/imageView"
+            android:padding="10dp"/>
     </RelativeLayout>
 </ScrollView>
