@@ -463,5 +463,14 @@
             android:text="Go to Activity 4"
             android:layout_below="@+id/toActivity3Button"
             android:layout_marginTop="20dp" />
+
+        <!--        osm-->
+        <Button
+            android:id="@+id/toActivity5Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Go to Activity 5"
+            android:layout_below="@+id/toActivity4Button"
+            android:layout_marginTop="20dp" />
     </RelativeLayout>
 </ScrollView>

@@ -453,6 +453,13 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, MainActivity4::class.java)
             startActivity(intent)
         }
+
+        // osm
+        val toActivity5Button = findViewById<Button>(R.id.toActivity5Button)
+        toActivity5Button.setOnClickListener {
+            val intent = Intent(this, MainActivity5::class.java)
+            startActivity(intent)
+        }
     }
 
     // menu
