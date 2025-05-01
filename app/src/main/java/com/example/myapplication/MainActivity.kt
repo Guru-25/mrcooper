@@ -446,6 +446,13 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, MainActivity3::class.java)
             startActivity(intent)
         }
+
+        // multimedia
+        val toActivity4Button = findViewById<Button>(R.id.toActivity4Button)
+        toActivity4Button.setOnClickListener {
+            val intent = Intent(this, MainActivity4::class.java)
+            startActivity(intent)
+        }
     }
 
     // menu

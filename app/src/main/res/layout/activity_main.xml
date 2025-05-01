@@ -454,5 +454,14 @@
             android:text="Go to Activity 3"
             android:layout_below="@+id/openCameraButton"
             android:layout_marginTop="20dp" />
+
+        <!--        multimedia-->
+        <Button
+            android:id="@+id/toActivity4Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Go to Activity 4"
+            android:layout_below="@+id/toActivity3Button"
+            android:layout_marginTop="20dp" />
     </RelativeLayout>
 </ScrollView>
