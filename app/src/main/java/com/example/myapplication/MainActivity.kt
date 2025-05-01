@@ -460,6 +460,13 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, MainActivity5::class.java)
             startActivity(intent)
         }
+
+        // firebase
+        val toActivity6Button = findViewById<Button>(R.id.toActivity6Button)
+        toActivity6Button.setOnClickListener {
+            val intent = Intent(this, MainActivity6::class.java)
+            startActivity(intent)
+        }
     }
 
     // menu

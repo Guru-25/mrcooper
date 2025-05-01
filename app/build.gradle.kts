@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -50,4 +51,5 @@ dependencies {
     implementation("com.google.guava:guava:31.1-android")
     implementation ("com.google.android.gms:play-services-location:18.0.0")
     implementation("org.osmdroid:osmdroid-android:6.1.13")
+    implementation(platform("com.google.firebase:firebase-bom:33.13.0"))
 }
